@@ -1,0 +1,54 @@
+{
+    "comment": {
+        "problem": "spherical blast wave",
+        "reference": "Gardiner. T.A. & Stone, J.M., JCP, 205, 509 (2005) (for MHD version of test)",
+        "configure": "--prob=blast"
+    },
+    "job": {
+        "problem_id": "Blast"
+    },
+    "output1": {
+        "file_type": "hst",
+        "dt": 0.01
+    },
+    "output2": {
+        "file_type": "vtk",
+        "variable": "prim",
+        "dt": 0.01
+    },
+    "time": {
+        "cfl_number": 0.3,
+        "nlim": -1,
+        "tlim": 1.0,
+        "integrator": "vl2",
+        "xorder": 2,
+        "ncycle_out": 1
+    },
+    "mesh": {
+        "nx1": 50,
+        "x1min": -0.5,
+        "x1max": 0.5,
+        "ix1_bc": "periodic",
+        "ox1_bc": "periodic",
+        "nx2": 100,
+        "x2min": -0.75,
+        "x2max": 0.75,
+        "ix2_bc": "periodic",
+        "ox2_bc": "periodic",
+        "nx3": 50,
+        "x3min": -0.5,
+        "x3max": 0.5,
+        "ix3_bc": "periodic",
+        "ox3_bc": "periodic"
+    },
+    "hydro": {
+        "gamma": 1.666666666667,
+        "iso_sound_speed": 0.4082482905
+    },
+    "problem": {
+        "compute_error": "false",
+        "pamb": 0.1,
+        "prat": 100.0,
+        "radius": 0.1
+    }
+}
